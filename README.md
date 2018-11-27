@@ -1,12 +1,13 @@
 # IonicNgrxTemplate
-An Ionic boiler plate integrated with redux using ngrx/store, ngrx/effects, ngrx store logger and ngrx/devtools using Ionic 3
+An Ionic boiler plate integrated with redux using ngrx/store, ngrx/effects, ngrx store logger and ngrx/devtools using Ionic 3.
+======================================
 
-Step 1: Clone the project repository
+Steps below to run the app
 
-`git clone https://github.com/jayzyaj/IonicNgrxTemplate`
+- Clone the project repository `git clone https://github.com/jayzyaj/IonicNgrxTemplate`
 
-Step 2: Run `npm -i`
+- Go to the project directory and run `npm -i` to install all the package needed
 
-Step 3: run `ionic serve`
+- run `ionic serve`
 
 There you go! You're first Ionic app with the use of redux in ngrx.
