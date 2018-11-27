@@ -4,10 +4,10 @@ An Ionic boiler plate integrated with redux using ngrx/store, ngrx/effects, ngrx
 
 Steps below to run the app
 
-- Clone the project repository `git clone https://github.com/jayzyaj/IonicNgrxTemplate`
+* Clone the project repository `git clone https://github.com/jayzyaj/IonicNgrxTemplate`
 
-- Go to the project directory and run `npm -i` to install all the package needed
+* Go to the project directory and run `npm -i` to install all the package needed
 
-- run `ionic serve`
+* run `ionic serve`
 
 There you go! You're first Ionic app with the use of redux in ngrx.
