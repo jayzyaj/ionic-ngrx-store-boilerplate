@@ -2,7 +2,7 @@
 An Ionic boiler plate integrated with redux using ngrx/store, ngrx/effects, ngrx store logger and ngrx/devtools using Ionic 3.
 --------------------------
 
-For more information about ngrx visit https://ngrx.io/
+For more information about **ngrx** visit https://ngrx.io/
 
 Steps below to run the app
 
