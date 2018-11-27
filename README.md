@@ -1,6 +1,6 @@
 # IonicNgrxTemplate
 An Ionic boiler plate integrated with redux using ngrx/store, ngrx/effects, ngrx store logger and ngrx/devtools using Ionic 3.
-======================================
+--------------------------
 
 Steps below to run the app
 
