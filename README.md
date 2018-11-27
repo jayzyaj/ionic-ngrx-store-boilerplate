@@ -3,7 +3,7 @@ An Ionic boiler plate integrated with redux using ngrx/store, ngrx/effects, ngrx
 
 Step 1: Clone the project repository
 
-git clone https://github.com/jayzyaj/IonicNgrxTemplate/edit/master/README.md
+git clone https://github.com/jayzyaj/IonicNgrxTemplate
 
 Step 2: Run npm -i
 
