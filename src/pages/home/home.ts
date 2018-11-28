@@ -3,10 +3,11 @@ import { FETCH_USERS } from './../../store/actions/users';
 import { FETCH_POSTS } from './../../store/actions/posts';
 import { Observable, Subscription } from 'rxjs';
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, ToastController, IonicPage } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 import { FormBuilder, Validators } from '@angular/forms';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

@@ -14,6 +14,7 @@ export interface UserState {
 export interface AuthState {
     isAuthenticated: Boolean,
     authenticating: Boolean,
+    unauthenticating: Boolean,
     error: Object,
     token: String
 }

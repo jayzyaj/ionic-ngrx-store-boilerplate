@@ -15,4 +15,10 @@ export class AuthProvider {
     )
   }
 
+  signOut() {
+    return this.http.delete('https://topserve-api.s17-host.com/v1/d/auth/logout').pipe(
+      catchError((error: any) => Observable.throw(error))
+    )
+  }
+
 }

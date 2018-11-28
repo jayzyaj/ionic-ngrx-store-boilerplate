@@ -1,3 +1,4 @@
+import { HeaderInterceptorModule } from './header_interceptor.module';
 import { ToastProvider } from './../providers/popup-messages/toast';
 import { AuthProvider } from './../providers/api/authenticate';
 import { UsersProvider } from './../providers/api/users';
@@ -20,6 +21,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 export function logger(reducer: ActionReducer<any>): any {
   // default, no options
@@ -30,8 +32,7 @@ export const metaReducers = [logger];
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -41,12 +42,13 @@ export const metaReducers = [logger];
     EffectsModule.forRoot(effects),
     StoreDevtoolsModule.instrument({
       maxAge: 15
-    })
+    }),
+    IonicStorageModule.forRoot(),
+    HeaderInterceptorModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   providers: [
     StatusBar,

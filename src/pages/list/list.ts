@@ -1,12 +1,8 @@
+import { LOGOUT_REQUEST } from './../../store/actions/authenticate';
+import { Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +11,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  authState: Subscription
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public store: Store<any>) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListPage');
+  ionViewWillEnter() {
+    this.authState = this.store.select<any>('auth').subscribe(state => console.log(state))
+  }
+
+  ionViewWillLeave() {
+    this.authState.unsubscribe()
+  }
+
+  logout() {
+    this.store.dispatch({ type: LOGOUT_REQUEST })
   }
 
 }
