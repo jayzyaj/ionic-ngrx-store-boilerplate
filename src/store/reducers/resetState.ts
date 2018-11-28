@@ -1,11 +1,11 @@
-import { Action } from '@ngrx/store';
+import { Action, ActionReducer } from '@ngrx/store';
 import { RESET_STATE } from '../actions/resetState';
 
-export function resetStateReducer(state: any, action: Action) {
-    switch (action.type) {
-        case RESET_STATE:
+export function resetStateReducer(reducer: ActionReducer<any>) {
+    return function (state: any, action: any) {
+        if (action.type == RESET_STATE) {
             state = undefined
-        default:
-            return state;
+        }
+        return reducer(state, action)
     }
 }
