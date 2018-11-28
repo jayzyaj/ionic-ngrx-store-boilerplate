@@ -1,3 +1,5 @@
+import { ToastProvider } from './../providers/popup-messages/toast';
+import { AuthProvider } from './../providers/api/authenticate';
 import { UsersProvider } from './../providers/api/users';
 import { effects } from './../store/effects/index';
 import { BrowserModule } from '@angular/platform-browser';
@@ -51,7 +53,9 @@ export const metaReducers = [logger];
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PostsProvider,
-    UsersProvider
+    UsersProvider,
+    AuthProvider,
+    ToastProvider
   ]
 })
 export class AppModule {}

@@ -1,10 +1,9 @@
 import { UsersProvider } from './../../providers/api/users';
-import { PostsProvider } from './../../providers/api/posts';
 import { Injectable } from '@angular/core';
 
-import { Effect, Actions, ofType } from '@ngrx/effects'
+import { Effect, Actions } from '@ngrx/effects'
 import * as usersActions from '../actions/users'
-import { switchMap, map, catchError, mergeMap } from 'rxjs/operators';
+import { switchMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable()
@@ -13,7 +12,7 @@ export class UsersEffect {
     constructor(public actions$: Actions, public userApi: UsersProvider) { }
 
     @Effect()
-    fetchPosts$ = this.actions$.ofType(usersActions.FETCH_USERS)
+    fetchUsers$ = this.actions$.ofType(usersActions.FETCH_USERS)
         .pipe(
             switchMap(() => {
                 return this.userApi.getUsers().pipe(

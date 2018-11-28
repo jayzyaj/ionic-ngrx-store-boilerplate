@@ -10,3 +10,10 @@ export interface UserState {
     fetching: Boolean,
     error: Object
 }
+
+export interface AuthState {
+    isAuthenticated: Boolean,
+    authenticating: Boolean,
+    error: Object,
+    token: String
+}

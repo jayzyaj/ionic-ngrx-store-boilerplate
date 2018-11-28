@@ -1,9 +1,9 @@
 import { PostsProvider } from './../../providers/api/posts';
 import { Injectable } from '@angular/core';
 
-import { Effect, Actions, ofType } from '@ngrx/effects'
+import { Effect, Actions } from '@ngrx/effects'
 import * as postsActions from '../actions/posts'
-import { switchMap, map, catchError, mergeMap } from 'rxjs/operators';
+import { switchMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable()
