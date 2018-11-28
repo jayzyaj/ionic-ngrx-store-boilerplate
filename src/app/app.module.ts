@@ -40,7 +40,7 @@ export const metaReducers = [logger];
     StoreModule.forRoot(rootReducer, { metaReducers }),
     EffectsModule.forRoot(effects),
     StoreDevtoolsModule.instrument({
-      maxAge: 5
+      maxAge: 15
     })
   ],
   bootstrap: [IonicApp],
