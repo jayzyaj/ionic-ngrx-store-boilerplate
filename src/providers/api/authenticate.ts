@@ -9,7 +9,7 @@ export class AuthProvider {
   constructor(public http: HttpClient) {}
 
   signIn(data) {
-    return this.http.post('https://yourapi-server-login-router', data).pipe(
+    return this.http.post('https://yourapi-server-o', data).pipe(
       catchError((error: any) => Observable.throw(error))
     )
   }

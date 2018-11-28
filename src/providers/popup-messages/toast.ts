@@ -12,7 +12,7 @@ export class ToastProvider {
             duration: 3000,
             position: 'top'
         });
-        toast.onDidDismiss(() => console.log('Dismissed toast'););
+        toast.onDidDismiss(() => console.log('Dismissed toast'));
         toast.present();
     }
 
