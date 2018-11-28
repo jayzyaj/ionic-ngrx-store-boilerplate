@@ -32,8 +32,10 @@ export class AuthEffect {
     errorSignIn$ = this.actions$.pipe(
         ofType<any>(authActions.LOGIN_FAILED),
         map(({ payload }) => {
-            console.log('Effect message', payload)
-            this.toastMsg.showNormalToastMessage('Invalid email or password')
+            const serverErrors: any = payload.error.errors
+            for (let error in serverErrors) { 
+                return this.toastMsg.showNormalToastMessage(serverErrors[error][0])
+             }
         })
     )
 
@@ -61,7 +63,6 @@ export class AuthEffect {
     errorSignOut$ = this.actions$.pipe(
         ofType<any>(authActions.LOGOUT_FAILED),
         map(({ payload }) => {
-            console.log('Effect message', payload)
             this.toastMsg.showNormalToastMessage('Something went wrong.')
         })
     )
