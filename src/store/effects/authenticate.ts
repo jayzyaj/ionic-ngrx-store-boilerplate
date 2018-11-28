@@ -1,3 +1,4 @@
+import { RESET_STATE } from './../actions/resetState';
 import { Store } from '@ngrx/store';
 import { LOGIN_FAILED } from './../actions/authenticate';
 import { App } from 'ionic-angular';
@@ -9,7 +10,6 @@ import { Effect, Actions, ofType } from '@ngrx/effects'
 import * as authActions from '../actions/authenticate'
 import { switchMap, map, catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { RESET_STATE } from '../actions/resetState';
 
 @Injectable()
 export class AuthEffect {
@@ -71,6 +71,7 @@ export class AuthEffect {
         ofType<any>(authActions.LOGOUT_SUCCESS),
         tap(async (response: any) => {
             await this.app.getActiveNav().setRoot("HomePage")
+            this.store.dispatch({ type: RESET_STATE })
             await this.storage.remove('token')
         })
     )
