@@ -16,6 +16,6 @@
       <ion-label>Password</ion-label>
       <ion-input type="password" formControlName="password" placeholder="password"></ion-input>
     </ion-item>
-    <button ion-button block>{{ auth?.authenticating ? 'Signing in...' : 'Sign In' }}</button>
+    <button ion-button block [disabled]="auth?.authenticating">{{ auth?.authenticating ? 'Signing in...' : 'Sign In' }}</button>
   </form>
 </ion-content>

@@ -1,16 +1,17 @@
+import { NavController, App } from 'ionic-angular';
 import { ToastProvider } from './../../providers/popup-messages/toast';
 import { AuthProvider } from './../../providers/api/authenticate';
 import { Injectable } from '@angular/core';
 
 import { Effect, Actions, ofType } from '@ngrx/effects'
 import * as authActions from '../actions/authenticate'
-import { switchMap, map, catchError } from 'rxjs/operators';
+import { switchMap, map, catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable()
 export class AuthEffect {
 
-    constructor(public actions$: Actions, public authApi: AuthProvider, public toastMsg: ToastProvider) { }
+    constructor(public actions$: Actions, public authApi: AuthProvider, public toastMsg: ToastProvider, public app: App) { }
 
     @Effect()
     authenticate$ = this.actions$.ofType(authActions.LOGIN_REQUEST)
@@ -29,6 +30,14 @@ export class AuthEffect {
         map(({ payload }) => {
             console.log('Effect message', payload)
             this.toastMsg.showNormalToastMessage('Invalid email or password')
+        })
+    )
+
+    @Effect({ dispatch: false })
+    success$ = this.actions$.pipe(
+        ofType<any>(authActions.LOGIN_SUCCESS),
+        tap(() => {
+            this.app.getActiveNav().setRoot("ListPage")
         })
     )
 

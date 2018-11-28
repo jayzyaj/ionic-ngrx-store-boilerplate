@@ -9,7 +9,8 @@ export class AuthProvider {
   constructor(public http: HttpClient) {}
 
   signIn(data) {
-    return this.http.post('https://yourapi-server-login-router', data).pipe(
+    console.log('Provider data', data)
+    return this.http.post('https://topserve-api.s17-host.com/v1/d/auth/login', data).pipe(
       catchError((error: any) => Observable.throw(error))
     )
   }
