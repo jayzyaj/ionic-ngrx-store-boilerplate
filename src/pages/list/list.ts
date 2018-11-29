@@ -12,12 +12,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ListPage {
 
   authState: Subscription
+  auth: any
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public store: Store<any>) {
   }
 
   ionViewWillEnter() {
-    this.authState = this.store.select<any>('auth').subscribe(state => console.log(state))
+    this.authState = this.store.select<any>('auth').subscribe(state => this.auth = state)
   }
 
   ionViewWillLeave() {

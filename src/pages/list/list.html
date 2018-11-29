@@ -16,5 +16,5 @@
 <ion-content padding>
   <h1>You are authenticated!</h1>
   
-  <button ion-button block (tap)="logout()">Sign Out</button>
+  <button ion-button block (tap)="logout()" [disabled]="auth?.unauthenticating">{{ auth?.unauthenticating ? 'Signing you out...' : 'Sign Out'}}</button>
 </ion-content>
