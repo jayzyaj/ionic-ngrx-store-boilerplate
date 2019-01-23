@@ -10,13 +10,13 @@ export class AuthProvider {
 
   signIn(data) {
     console.log('Provider data', data)
-    return this.http.post('https://topserve-api.s17-host.com/v1/d/auth/login', data).pipe(
+    return this.http.post('https://your-desired-url.com/v1/auth/login', data).pipe(
       catchError((error: any) => Observable.throw(error))
     )
   }
 
   signOut() {
-    return this.http.delete('https://topserve-api.s17-host.com/v1/d/auth/logout').pipe(
+    return this.http.delete('https://your-desired-url.com/api/v1/logout').pipe(
       catchError((error: any) => Observable.throw(error))
     )
   }
