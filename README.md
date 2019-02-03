@@ -25,4 +25,4 @@ and if you are using iOS. You can add the `--prod` flag at the end to run it on 
 ionic cordova run ios
 ```
 
-There you go! You're first Ionic app with the use of ngrx/store. Happy Coding!
+Happy Coding!
